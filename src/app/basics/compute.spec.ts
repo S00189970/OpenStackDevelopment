@@ -9,4 +9,9 @@ describe ('compute', () => {
         const result = compute(1);
         expect(result).toBe(2);
     });
+    // fail test
+    // it('should return 0 if the input is negative',() => {
+    //     const result = compute(3);
+    //     expect(result).toBe(0);
+    // });
 });
