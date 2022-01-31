@@ -1,5 +1,6 @@
 import { getCurrencies } from "./getCurrencies";
 
+// Paul Sherlock S00189970
 describe('getCurrencies', () => {
     it('it should get the EUR in array', () => {
         expect(getCurrencies()).toContain('EUR')
