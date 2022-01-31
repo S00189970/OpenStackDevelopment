@@ -7,7 +7,6 @@ describe('getCurrencies', () => {
     it('get all currencies in array',() =>{
         expect(getCurrencies()).toEqual(['USD','GDP','EUR'])
     });
-    // Fail Test
     // it('it should get the Kromer in array', () => {
     //     expect(getCurrencies()).toContain('Kromer')
     // });
