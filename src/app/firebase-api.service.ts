@@ -18,7 +18,21 @@ export class FirebaseApiService {
   }
 
   getBooks(): Observable<Book>{
-    return this.http.get<Book>(this.apiURL = '/getBooks')
+    return this.http.get<Book>(this.apiURL + '/getBooks')
+    .pipe(
+      retry(1),
+      catchError(this.handleError)
+    )
+  }
+  addBook(title:string , author:string): Observable<Book>{
+    return this.http.post<Book>(this.apiURL + '/addBook?title=' + title + '&author=' + author,null)
+    .pipe(
+      retry(1),
+      catchError(this.handleError)
+    )
+  }
+  delBook(id:string): Observable<Book> {
+    return this.http.delete<Book>(this.apiURL + '/deleteBook?id=' + id)
     .pipe(
       retry(1),
       catchError(this.handleError)
